@@ -24,46 +24,14 @@ return {
       inverse = true, -- invert background for search, diffs, statuslines and errors
       contrast = "hard", -- can be "hard", "soft" or empty string
       palette_overrides = {
-        dark0_hard = "#16181b",
+        -- dark0_hard = "#16181b",
+        dark0_hard = "#0B1017",
       },
     },
     overrides = {},
     dim_inactive = true,
   },
-
   {
-    "rebelot/kanagawa.nvim",
-    compile = false, -- enable compiling the colorscheme
-    undercurl = true, -- enable undercurls
-    commentStyle = { italic = true },
-    functionStyle = {},
-    keywordStyle = { italic = true },
-    statementStyle = { bold = true },
-    typeStyle = {},
-    transparent = false, -- do not set background color
-    dimInactive = false, -- dim inactive window `:h hl-NormalNC`
-    terminalColors = true, -- define vim.g.terminal_color_{0,17}
-    colors = { -- add/modify theme and palette colors
-      palette = {},
-      theme = { wave = {}, lotus = {}, dragon = {}, all = {} },
-    },
-    overrides = function(colors) -- add/modify highlights
-      return {}
-    end,
-    background = { -- map the value of 'background' option to a theme
-      dark = "dragon", -- try "dragon" !
-      light = "lotus",
-    },
-  },
-  {
-    "rose-pine/neovim",
-    name = "rose-pine",
-  },
-  {
-    "ayu-theme/ayu-vim",
-  },
-  {
-
     "LazyVim/LazyVim",
     opts = {
       colorscheme = "gruvbox",
