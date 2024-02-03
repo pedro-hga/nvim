@@ -22,10 +22,10 @@ return {
       invert_tabline = false,
       invert_intend_guides = false,
       inverse = true, -- invert background for search, diffs, statuslines and errors
-      contrast = "hard", -- can be "hard", "soft" or empty string
+      contrast = "hard",
       palette_overrides = {
         -- dark0_hard = "#16181b",
-        dark0_hard = "#0B1017",
+        dark0_hard = "#121212",
       },
     },
     overrides = {},
