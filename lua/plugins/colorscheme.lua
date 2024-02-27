@@ -1,4 +1,9 @@
 return {
+  {
+    "xero/miasma.nvim",
+    lazy = false,
+    priority = 1000,
+  },
   -- {
   --   "ellisonleao/gruvbox.nvim",
   --
@@ -61,16 +66,19 @@ return {
   --     require("kanagawa").setup({})
   --   end,
   -- },
-  -- {
-  --   "sainnhe/everforest-nvim",
-  -- },
+  {
+    "sainnhe/everforest-nvim",
+  },
+  {
+    "Yazeed1s/oh-lucy.nvim",
+  },
   {
     "rmehri01/onenord.nvim",
   },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "onenord",
+      colorscheme = "miasma",
     },
   },
 }
