@@ -57,6 +57,21 @@ return {
   {
     "rose-pine/neovim",
     name = "rose-pine",
+    config = function()
+      require("rose-pine").setup({
+        enable = {
+          terminal = true,
+          legacy_highlights = true, -- Improve compatibility for previous versions of Neovim
+          migrations = true, -- Handle deprecated options automatically
+        },
+
+        styles = {
+          bold = false,
+          italic = false,
+          transparency = false,
+        },
+      })
+    end,
   },
   -- --nord2
   -- {
@@ -81,7 +96,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "rose-pine-moon",
+      colorscheme = "nord",
     },
   },
 }
