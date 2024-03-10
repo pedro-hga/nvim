@@ -54,7 +54,10 @@ return {
       require("nord").setup({})
     end,
   },
-
+  {
+    "rose-pine/neovim",
+    name = "rose-pine",
+  },
   -- --nord2
   -- {
   --   "shaunsingh/nord.nvim",
@@ -78,7 +81,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "nord",
+      colorscheme = "rose-pine-moon",
     },
   },
 }
