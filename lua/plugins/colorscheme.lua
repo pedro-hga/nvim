@@ -52,13 +52,13 @@ return {
   -- },
 
   -- nord
-  -- {
-  --   "gbprod/nord.nvim",
-  --   priority = 1000,
-  --   config = function()
-  --     require("nord").setup({})
-  --   end,
-  -- },
+  {
+    "pedro-hga/nord.nvim",
+    priority = 1000,
+    config = function()
+      require("nord").setup({})
+    end,
+  },
   -- {
   --   "rose-pine/neovim",
   --   name = "rose-pine",
@@ -86,7 +86,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "northern",
+      colorscheme = "nord",
     },
   },
 }
