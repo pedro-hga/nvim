@@ -4,11 +4,11 @@ return {
     lazy = false,
     priority = 1000,
   },
-  {
-    "fcancelinha/northern.nvim",
-    branch = "master",
-    priority = 1000,
-  },
+  -- {
+  --   "fcancelinha/northern.nvim",
+  --   branch = "master",
+  --   priority = 1000,
+  -- },
   -- {
   --   "ellisonleao/gruvbox.nvim",
   --
@@ -35,21 +35,20 @@ return {
   --     contrast = "hard",
   --     palette_overrides = {
   --       -- dark0_hard = "#16181b",
-  --       -- dark0_hard = "#121212",
+  --       dark0_hard = "#121212",
   --     },
   --   },
   --   overrides = {},
   --   dim_inactive = true,
   -- },
-  -- nordic
-  -- {
+  -- nordic({
   --   "AlexvZyl/nordic.nvim",
   --   lazy = false,
   --   priority = 1000,
   --   config = function()
   --     require("nordic").load()
   --   end,
-  -- },
+  -- }),
 
   -- nord
   {
@@ -59,34 +58,13 @@ return {
       require("nord").setup({})
     end,
   },
-  -- {
-  --   "rose-pine/neovim",
-  --   name = "rose-pine",
-  -- },
-  -- --nord2
-  -- {
-  --   "shaunsingh/nord.nvim",
-  -- },
-  -- kanagawa
-  -- {
-  --   "rebelot/kanagawa.nvim",
-  --   config = function()
-  --     require("kanagawa").setup({})
-  --   end,
-  -- },
-  -- {
-  --   "sainnhe/everforest-nvim",
-  -- },
-  -- {
-  --   "Yazeed1s/oh-lucy.nvim",
-  -- },
-  -- {
-  --   "rmehri01/onenord.nvim",
-  -- },
+  {
+    "EdenEast/nightfox.nvim",
+  },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "nord",
+      colorscheme = "terafox",
     },
   },
 }
