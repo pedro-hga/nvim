@@ -20,21 +20,20 @@ return {
       underline = true,
       bold = true,
       italic = {
-        strings = true,
+        strings = false,
         emphasis = true,
         comments = true,
         operators = false,
         folds = true,
       },
       strikethrough = true,
-      invert_selection = false,
+      invert_selection = true,
       invert_signs = false,
       invert_tabline = false,
       invert_intend_guides = false,
       inverse = true, -- invert background for search, diffs, statuslines and errors
       contrast = "hard",
       palette_overrides = {
-        -- dark0_hard = "#16181b",
         dark0_hard = "#152528",
       },
     },
