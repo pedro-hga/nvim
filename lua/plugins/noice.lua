@@ -1,12 +1,21 @@
 return {
   "folke/noice.nvim",
-  event = "VeryLazy",
+  -- event = "VeryLazy",
   opts = {
     -- add any options here
   },
   dependencies = {
     "MunifTanjim/nui.nvim",
     "rcarriga/nvim-notify",
+  },
+  routes = {
+    {
+      filter = {
+        event = "msg_show",
+        find = "registers", -- This matches the :reg command output
+      },
+      opts = { skip = true }, -- Skip handling by Noice
+    },
   },
   require("noice").setup({
     cmdline = {

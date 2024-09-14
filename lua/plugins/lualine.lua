@@ -7,7 +7,15 @@ return {
       section_separators = { left = "", right = "" },
     },
     sections = {
-      lualine_a = { { "mode", separator = { left = " " }, right_padding = 2 } },
+      lualine_a = {
+        { "mode", separator = { left = " " }, right_padding = 2 },
+        {
+          "macro",
+          fmt = function()
+            return vim.fn.reg_recording() ~= "" and "Recording @" .. vim.fn.reg_recording() or ""
+          end,
+        },
+      },
       lualine_b = { "filename", "branch" },
       lualine_c = {
         "%=", --[[ add your center compoentnts here in place of this comment ]]
