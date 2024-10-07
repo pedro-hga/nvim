@@ -34,9 +34,9 @@ return {
       inverse = true, -- invert background for search, diffs, statuslines and errors
       contrast = "hard",
       palette_overrides = {
-        dark0_hard = "#152528",
-        dark0 = "#152528",
-        dark1 = "#233E43",
+        dark0_hard = "#112218",
+        dark0 = "#112218",
+        dark1 = "#1B3627",
         dark_green = "#8EC07C",
         bright_green = "#C3C555",
         bright_red = "#E16A5C",
