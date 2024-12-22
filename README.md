@@ -1,3 +1,4 @@
-# ABOUT
+# 💤 LazyVim
 
-Personal neovim config, using LazyVim as a foundation
+A starter template for [LazyVim](https://github.com/LazyVim/LazyVim).
+Refer to the [documentation](https://lazyvim.github.io/installation) to get started.

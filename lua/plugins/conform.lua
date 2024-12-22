@@ -5,7 +5,7 @@ return {
       lua = { "stylua" },
       -- Conform will run multiple formatters sequentially
       javascript = { { "prettierd", "prettier" } },
-      eruby = { "htmlbeautifier" },
+      eruby = { "erb-formatter" },
     },
   },
 }
