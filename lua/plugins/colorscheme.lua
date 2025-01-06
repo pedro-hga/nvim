@@ -24,26 +24,34 @@ return {
       inverse = false, -- invert background for search, diffs, statuslines and errors
       contrast = "hard",
       palette_overrides = {
-        dark0_hard = "#191D24",
+        dark0_hard = "#00181E",
         dark0 = "#212730",
         dark1 = "#2A313C",
         -- dark_green = "#8EC07C",
-        -- bright_green = "#C3C555",
-        -- bright_red = "#E16A5C",
-        -- bright_orange = "#F0974E",
+        bright_green = "#007A78",
+        bright_red = "#DB4242",
+        bright_orange = "#C7793A",
+        bright_yellow = "#E5AE2E",
+        light0_hard = "#F2F0DE",
       },
     },
     overrides = {},
     dim_inactive = true,
   },
-  -- {
-  --   "AlexvZyl/nordic.nvim",
-  --   lazy = false,
-  --   priority = 1000,
-  --   config = function()
-  --     require("nordic").load()
-  --   end,
-  -- },
+
+  {
+    "neanias/everforest-nvim",
+    version = false,
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require("everforest").setup({
+        colours_override = function(palette)
+          palette.bg0 = "#00181E"
+        end,
+      })
+    end,
+  },
 
   -- nord
   -- {
