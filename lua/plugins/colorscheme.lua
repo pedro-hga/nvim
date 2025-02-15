@@ -48,26 +48,20 @@ return {
       require("everforest").setup({
         colours_override = function(palette)
           palette.bg0 = "#00181E"
+          palette.aqua = "#00858F"
         end,
       })
     end,
   },
 
-  -- nord
-  -- {
-  --   "pedro-hga/nord.nvim",
-  --   priority = 1000,
-  --   config = function()
-  --     require("nord").setup({})
-  --   end,
-  -- },
+  { "fcancelinha/nordern.nvim", branch = "master", priority = 1000 },
   {
-    "EdenEast/nightfox.nvim",
+    "rmehri01/onenord.nvim",
   },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "gruvbox",
+      colorscheme = "onenord",
     },
   },
 }
