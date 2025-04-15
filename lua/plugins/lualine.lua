@@ -1,65 +1,182 @@
 return {
   "nvim-lualine/lualine.nvim",
   config = function()
-    local colors = {
-      blue = "#5EB1D4",
-      cyan = "#88c0d0",
-      black = "#080808",
-      white = "#eceff4",
-      red = "#bf616a",
-      violet = "#b48ead",
-      yellow = "#ebcb8b",
-      grey = "#4c566a",
-      orange = "#d08770",
-      green = "#a3be8c",
+    local lualine_colors = {
+      dark = "#2E3440",
+      frostblue = "#5E81Ac",
+      frostgreen = "#8FBCBB",
+      frostlightblue = "#81A1C1",
+      frostturquoise = "#88C0D0",
+      green = "#A3BE8C",
+      grey = "#434C5E",
+      greydark = "#3B4252",
+      orange = "#D08770",
+      purple = "#B48EAD",
+      red = "#BF616A",
+      snowdark = "#D8DEE9",
+      snowlight = "#ECEFF4",
+      snowshade = "#E5E9F0",
+      yellow = "#EBCB8B",
+      special = "#384356",
+      none = "None",
     }
 
-    local bubbles_theme = {
-      normal = {
-        a = { fg = colors.black, bg = colors.cyan },
-        b = { fg = colors.white, bg = colors.grey },
-        c = { fg = colors.white },
-      },
-
-      insert = { a = { fg = colors.black, bg = colors.yellow } },
-      visual = { a = { fg = colors.black, bg = colors.orange } },
-      replace = { a = { fg = colors.black, bg = colors.red } },
-
-      inactive = {
-        a = { fg = colors.white, bg = colors.black },
-        b = { fg = colors.white, bg = colors.black },
-        c = { fg = colors.white },
-      },
-    }
+    local custom_nordern = require("lualine.themes.nordern")
+    custom_nordern.normal.x.bg = lualine_colors.none
+    custom_nordern.insert.x.bg = lualine_colors.none
+    custom_nordern.visual.x.bg = lualine_colors.none
+    custom_nordern.replace.x.bg = lualine_colors.none
+    custom_nordern.command.x.bg = lualine_colors.none
+    custom_nordern.normal.b.bg = lualine_colors.none
+    custom_nordern.insert.b.bg = lualine_colors.none
+    custom_nordern.visual.b.bg = lualine_colors.none
+    custom_nordern.replace.b.bg = lualine_colors.none
+    custom_nordern.command.b.bg = lualine_colors.none
+    custom_nordern.normal.c.bg = lualine_colors.none
+    custom_nordern.insert.c.bg = lualine_colors.none
+    custom_nordern.visual.c.bg = lualine_colors.none
+    custom_nordern.replace.c.bg = lualine_colors.none
+    custom_nordern.command.c.bg = lualine_colors.none
 
     require("lualine").setup({
       options = {
-        theme = bubbles_theme,
-        component_separators = "",
-        section_separators = { left = "", right = "" },
+        globalstatus = true,
+        icons_enabled = true,
+        theme = custom_nordern,
+        component_separators = {},
+        section_separators = {},
+        ignore_focus = {},
+        always_divide_middle = true,
+        refresh = {
+          statusline = 1000,
+          tabline = 1000,
+          winbar = 1000,
+        },
+        disabled_filetypes = {
+          statuslines = {},
+          winbar = {},
+          "alpha",
+          "lazygit",
+        },
       },
       sections = {
-        lualine_a = { { "mode", right_padding = 2 } },
-        lualine_b = { "filename", "branch" },
+        lualine_a = {},
+        lualine_b = {
+          {
+            "mode",
+            separator = { right = "" },
+          },
+          {
+            "searchcount",
+            icon = { "", color = { fg = lualine_colors.dark }, align = "left" },
+            color = { fg = lualine_colors.dark },
+          },
+          {
+            "selectioncount",
+            icon = { "󰒅", color = { fg = lualine_colors.dark }, align = "left" },
+            color = { fg = lualine_colors.dark },
+          },
+        },
         lualine_c = {
-          "%=", --[[ add your center components here in place of this comment ]]
+          {
+            "branch",
+            icon = { "󰊢 ", color = { fg = lualine_colors.green, bg = lualine_colors.none }, align = "left" },
+            color = { fg = lualine_colors.snowlight, bg = lualine_colors.none },
+            left_padding = 2,
+          },
+          {
+            "diff",
+            color = { bg = lualine_colors.dark },
+          },
         },
-        lualine_x = {},
-        lualine_y = { "filetype", "progress" },
-        lualine_z = {
-          { "location", left_padding = 2 },
+        lualine_x = {
+          {
+            "diagnostics",
+            sources = { "nvim_lsp" },
+            sections = { "hint" },
+            diagnostics_color = {
+              hint = {
+                fg = lualine_colors.frostturquoise,
+                bg = lualine_colors.none,
+              },
+            },
+            update_in_insert = true,
+            symbols = { hint = " " },
+            padding = 1,
+            separator = { left = "" },
+          },
+          {
+            "diagnostics",
+            sources = { "nvim_lsp" },
+            sections = { "info" },
+            diagnostics_color = {
+              hint = {
+                fg = lualine_colors.frostblue,
+                bg = lualine_colors.none,
+              },
+            },
+            update_in_insert = true,
+            symbols = { hint = " " },
+            padding = 1,
+            separator = { left = "" },
+          },
+          {
+            "diagnostics",
+            sources = { "nvim_lsp" },
+            sections = { "warn" },
+            diagnostics_color = {
+              warn = {
+                fg = lualine_colors.yellow,
+                bg = lualine_colors.none,
+              },
+            },
+            update_in_insert = true,
+            symbols = { warn = " " },
+            padding = 1,
+            separator = { left = "" },
+          },
+          {
+            "diagnostics",
+            sources = { "nvim_lsp" },
+            sections = { "error" },
+            diagnostics_color = {
+              error = {
+                fg = lualine_colors.red,
+                bg = lualine_colors.none,
+              },
+            },
+            update_in_insert = true,
+            symbols = { error = "✸  " },
+            padding = 1,
+            separator = { left = "" },
+          },
+          { "filetype" },
+          { "encoding" },
+          { "location" },
         },
+        lualine_y = {},
+        lualine_z = {},
       },
       inactive_sections = {
-        lualine_a = { "filename" },
+        lualine_a = {},
         lualine_b = {},
         lualine_c = {},
-        lualine_x = {},
+        lualine_x = { "location" },
         lualine_y = {},
-        lualine_z = { "location" },
+        lualine_z = {},
       },
       tabline = {},
-      extensions = {},
+      winbar = {},
+      inactive_winbar = {},
+      extensions = {
+        "mason",
+        "neo-tree",
+        "nvim-dap-ui",
+        "quickfix",
+        "symbols-outline",
+        "trouble",
+        "lazy",
+      },
     })
   end,
 }
