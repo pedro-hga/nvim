@@ -5,11 +5,18 @@ return {
     branch = "master",
     priority = 1000,
   },
-
+  {
+    "sainnhe/everforest",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      vim.g.everforest_enable_italic = true
+    end,
+  },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "nordern",
+      colorscheme = "everforest",
     },
   },
 }
