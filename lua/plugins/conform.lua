@@ -6,6 +6,7 @@ return {
       javascript = { "biome" },
       json = { "biome" },
       eruby = { "erb-formatter" },
+      css = { "prettierd" },
     },
   },
 }

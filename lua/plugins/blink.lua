@@ -9,14 +9,14 @@ return {
   opts = {
     keymap = {
       preset = "none",
-      ["<C-l>"] = { "show", "show_documentation", "hide_documentation" },
+      ["<L-l>"] = { "show", "show_documentation", "hide_documentation" },
       ["<C-e>"] = { "hide" },
-      ["<A-l>"] = { "select_and_accept" },
+      ["<C-l>"] = { "select_and_accept" },
 
       ["<Up>"] = { "select_prev", "fallback" },
       ["<Down>"] = { "select_next", "fallback" },
-      ["<A-k>"] = { "select_prev", "fallback" },
-      ["<A-j>"] = { "select_next", "fallback" },
+      ["<C-k>"] = { "select_prev", "fallback" },
+      ["<C-j>"] = { "select_next", "fallback" },
 
       ["<C-b>"] = { "scroll_documentation_up", "fallback" },
       ["<C-f>"] = { "scroll_documentation_down", "fallback" },
@@ -24,7 +24,7 @@ return {
       ["<Tab>"] = { "snippet_forward", "fallback" },
       ["<S-Tab>"] = { "snippet_backward", "fallback" },
 
-      ["<C-n>"] = { "show_signature", "hide_signature", "fallback" },
+      ["<A-n>"] = { "show_signature", "hide_signature", "fallback" },
     },
 
     appearance = {
