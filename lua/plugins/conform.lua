@@ -7,6 +7,7 @@ return {
       json = { "biome" },
       eruby = { "erb-formatter" },
       css = { "prettierd" },
+      python = { "ast-grep" },
     },
   },
 }

@@ -13,7 +13,6 @@ return {
       options = {
         globalstatus = true,
         icons_enabled = true,
-        theme = "everforest",
         component_separators = {},
         section_separators = {},
         ignore_focus = {},

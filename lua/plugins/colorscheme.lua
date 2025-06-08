@@ -1,5 +1,7 @@
 return {
-
+  {
+    "EdenEast/nightfox.nvim",
+  },
   {
     "fcancelinha/nordern.nvim",
     branch = "master",
@@ -16,7 +18,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "everforest",
+      colorscheme = "catppuccin-frappe",
     },
   },
 }
