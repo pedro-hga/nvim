@@ -1,7 +1,9 @@
 return {
   "nvim-treesitter/nvim-treesitter",
-  opts = {
-    ensure_installed = {
+  opts = function(_, opts)
+    require("nvim-treesitter.install").prefer_git = true
+
+    opts.ensure_installed = {
       "bash",
       "html",
       "javascript",
@@ -17,6 +19,8 @@ return {
       "typescript",
       "vim",
       "yaml",
-    },
-  },
+    }
+
+    return opts
+  end,
 }
